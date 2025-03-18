@@ -1,21 +1,48 @@
 # 🖧 NetPractice 
 
-NetPractice est un projet pédagogique de l'école 42 visant à apprendre les bases du réseau et de l'adressage IP. Il permet d'acquérir une compréhension approfondie des concepts liés aux adresses IP, aux sous-réseaux, aux masques, au routage et aux protocoles de communication.
+NetPractice est un projet visant à apprendre les bases du réseau et de l'adressage IP.\
+Il permet d'acquérir une compréhension approfondie des concepts liés aux adresses IP, aux sous-réseaux, aux masques, au routage et aux protocoles de communication.
 
 ---
+## 📖 Definitions
+
+### 🔹 **Adresse IP (Internet Protocol)**
+Une adresse IP est un identifiant unique attribué à chaque appareil connecté à un réseau informatique. Elle permet aux machines de s’identifier et de communiquer entre elles sur Internet ou un réseau local.  
+**Format IPv4 :** 4 nombres séparés par des points (ex. `192.168.1.1`), chacun représentant 8 bits, soit un total de **32 bits**.
+
+### 🔹 **Masque de sous-réseau**
+Un masque de sous-réseau est un ensemble de bits qui détermine la partie **réseau** et la partie **hôte** d’une adresse IP. Il est souvent noté sous forme décimale pointée (ex. `255.255.255.0`) ou en notation CIDR (`/24` indique que les 24 premiers bits sont réservés à l’identification du réseau).  
+**Exemple :**  
+- `192.168.1.10 / 255.255.255.0` → La partie réseau est `192.168.1.x`, la partie hôte est `x`.
+
+### 🔹 **Routage**
+Le routage est le processus de transmission de données d’un réseau à un autre via des équipements appelés **routeurs**. Il utilise des **tables de routage** pour déterminer le chemin optimal qu’un paquet de données doit emprunter.
+
+### 🔹 **Switch (Commutateur)**
+Un switch est un équipement réseau qui connecte plusieurs appareils au sein d’un **réseau local (LAN)**. Contrairement à un routeur, il fonctionne uniquement au niveau **du réseau interne** et ne gère pas l’interconnexion entre différents réseaux.
+
+### 🔹 **Protocole TCP/IP**
+Le **TCP/IP** est l’ensemble des règles qui régissent la transmission des données sur Internet. Il se compose de plusieurs couches :
+- **TCP (Transmission Control Protocol)** : Assure la transmission fiable des paquets de données en garantissant leur ordre et leur intégrité.
+- **IP (Internet Protocol)** : Assure l’adressage et le routage des paquets à travers les réseaux.
+
+### 🔹 **Notation CIDR (Classless Inter-Domain Routing)**
+La notation **CIDR** est une méthode permettant de représenter efficacement une plage d’adresses IP et son masque de sous-réseau. Elle simplifie l’écriture et optimise l'utilisation des adresses.  
+**Exemple :**  
+- `192.168.1.0/24` signifie que les **24 premiers bits** définissent le réseau et que les **8 bits restants** sont dédiés aux hôtes.
 
 ## 📌 1. Unicité de l’adresse IP
 
 Lorsqu’une communication réseau est établie, trois éléments sont essentiels :
 1. **Le nom de la machine distante** 🖥️ : Qui est l’hôte distant ?
 2. **L’adresse IP** 🌍 : Où se trouve cet hôte ?
-3. **Le chemin d’accès** 🚀 : Comment y parvenir ?
+3. **Le chemin d’accès** : Comment y parvenir ?
 
 Les machines communiquent uniquement en **binaire**. Une adresse IP (version 4 - IPv4) est standardisée sur **32 bits**, ce qui permet de structurer l'adressage réseau.
 
-### 🏷️ Deux informations clés contenues dans une adresse IPv4 :
-- **L’adresse réseau** 🏠
-- **L’adresse de l’hôte** 👤
+###  Deux informations clés contenues dans une adresse IPv4 :
+- **L’adresse réseau**
+- **L’adresse de l’hôte**
 
 Ces deux éléments forment ensemble une **adresse unique** sur un réseau.
 
@@ -88,13 +115,13 @@ Un **masque de sous-réseau** permet de séparer :
 
 ## 📌 6. Le protocole TCP/IP
 
-### 🌍 **TCP (Transmission Control Protocol)**
+### **TCP (Transmission Control Protocol)**
 - **Protocole de communication fiable** assurant la transmission des données 📦.
 - Avant d’envoyer des données, il établit une **connexion (handshake)**.
 - **Garantit l’ordre des paquets** et retransmet ceux qui sont perdus.
 - **Gère la congestion** pour éviter d’encombrer le réseau.
 
-### 🚀 **Routage des paquets**
+### **Routage des paquets**
 - Les paquets IP transitent à travers différents réseaux pour atteindre leur destination.
 - Utilisation des **tables de routage** pour définir le chemin optimal.
 
@@ -123,28 +150,16 @@ La conversion en binaire et l’opération AND permettent de déterminer **l’a
 ## 📌 8. Exercices NetPractice
 
 Le projet NetPractice propose **10 niveaux** progressifs permettant de tester ses connaissances en adressage réseau.
-
-📸 **Ajoutez ici des images des 10 niveaux du projet.**
-
----
-
-## 🎯 **Objectifs pédagogiques**
-- Comprendre et manipuler l’adressage **IPv4**.
-- Apprendre à utiliser les **masques de sous-réseau**.
-- Connaître la différence entre **adresses privées et publiques**.
-- Comprendre les **routeurs et commutateurs**.
-- Appliquer des notions comme **le routage, la transmission TCP/IP et la segmentation des réseaux**.
-
----
-
-## 📌 **Conclusion**
-NetPractice est un projet essentiel pour toute personne souhaitant **maîtriser les bases des réseaux**. En réalisant les exercices et en expérimentant avec les sous-réseaux, on acquiert une compréhension approfondie de la structure et de la gestion des réseaux informatiques. 🚀
+Niveau 6 - Configuration de base du routage
+</details>
+<summary>Niveau 6</summary>
+![6](https://github.com/user-attachments/assets/f47a471c-11d5-4f64-8051-66de9d4ddd96)
+Adresse IP et Masque de sous-réseau : Chaque appareil possède une adresse IP unique attribuée à son interface.
+Passerelle par défaut : Un hôte doit avoir une passerelle configurée pour acheminer le trafic en dehors de son réseau local.
+Routage statique : L'ajout manuel d'une route permettant la communication entre différents sous-réseaux.
+Dans ce niveau, il faut configurer les routes sur les hôtes et les routeurs afin d'assurer la communication entre webserv.non-real.com et Somewhere on the Net.
+</details>
+level : 6
 
 ---
 
-📌 **Références :**
-- [RFC 1918 - Adresses privées](https://datatracker.ietf.org/doc/html/rfc1918)
-- [IPv4 et sous-réseaux](https://fr.wikipedia.org/wiki/IPv4)
-- [TCP/IP et routage](https://fr.wikipedia.org/wiki/TCP/IP)
-
-# 42.Net_Pratice
