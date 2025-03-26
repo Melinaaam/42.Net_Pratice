@@ -182,6 +182,25 @@ La conversion en binaire et l’opération AND permettent de déterminer **l’a
   - Assurer que les masques de sous-réseaux correspondent sur toutes les interfaces.
   - Vérifier la cohérence des routes sur chaque machine.
 
+Pour acceder a Internet, on définit en general ce qu’on appelle une « route par défaut ». 
+
+C’est cette route qui permet d’envoyer tout le trafic inconnu (c’est-à-dire destiné à n’importe quelle adresse IP qui n’est pas sur le réseau local) vers la passerelle/routeur qui a lui-même accès à Internet.
+
+**Pourquoi 0.0.0.0 comme destination ?**
+- **Destination** : dans un tableau de routage, cette colonne indique la plage d’adresses IP à laquelle s’applique la route. Pour dire « toutes les adresses possibles » (c’est-à-dire l’intégralité d’Internet), on utilise l’adresse réseau 0.0.0.0 avec un masque 0.0.0.0.
+
+- **Interprétation**: 0.0.0.0/0 signifie « peu importe l’adresse de destination », c’est la route de dernier recours (ou route par défaut).
+
+Par exemple, si votre routeur local qui mène à Internet a l’adresse 192.168.1.1 sur le réseau local, votre route ressemblera à ceci :
+
+  Destination  | Masque       | Passerelle
+  0.0.0.0      | 0.0.0.0      | 192.168.1.1
+_Cela signifie : « Pour tout ce qui n’est pas sur un réseau déjà connu par d’autres routes, envoie le trafic vers 192.168.1.1 »._
+
+Rôle exact de la « destination » dans ce contexte
+Lorsque vous ajoutez une route, vous indiquez pour quelles adresses IP cette route est valable.
+Dans le cas de la route par défaut, la « destination » est donc 0.0.0.0/0 (toutes les adresses), ce qui couvre littéralement toutes les destinations possibles sur Internet.
+
 </details>
 
 <details>
